@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 #include "hardware/clocks.h"
@@ -34,7 +35,7 @@ int main()
         for (float angle = 0; angle <= 180; angle += 0.47) {
             set_servo_angle(angle); // Define o ângulo do servo
             set_led_brightness(angle); // Define o brilho do LED
-            if (angle >= 89.76f && angle <= 90.24f) sleep_ms(5000); // Pausa de 5 segundos no ângulo de 90 graus
+            if (fabs(angle - 90.0f) < (0.47f / 2)) sleep_ms(5000); // Pausa de 5 segundos no ângulo de 90 graus
             sleep_ms(10); // Pausa de 10 ms entre cada incremento de ângulo
         }
 
@@ -45,7 +46,7 @@ int main()
         for (float angle = 180; angle >= 0; angle -= 0.47) {
             set_servo_angle(angle); // Define o ângulo do servo
             set_led_brightness(angle); // Define o brilho do LED
-            if (angle >= 89.76f && angle <= 90.24f) sleep_ms(5000); // Pausa de 5 segundos no ângulo de 90 graus
+            if (fabs(angle - 90.0f) < (0.47f / 2)) sleep_ms(5000); // Pausa de 5 segundos no ângulo de 90 graus
             sleep_ms(10); // Pausa de 10 ms entre cada decremento de ângulo
         }
 
