@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/PWM-U4C7.hex'
+elf = 'build/PWM-U4C7.elf'
