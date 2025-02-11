@@ -10,6 +10,6 @@ O projeto propõe a implementação de um sistema de controle de servomotor, ond
 
 ## Demonstração
 
-![Demonstração do Projeto](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+[![Demonstração do Projeto](https://img.youtube.com/vi/1giwwCtjkps/0.jpg)](https://www.youtube.com/watch?v=1giwwCtjkps)
 
 Espaço reservado para inclusão de vídeo demonstrativo.
