@@ -31,10 +31,10 @@ int main()
     // Loop principal
     while (true) {
         // Gira o servo de 0 a 180 graus
-        for (float angle = 0; angle <= 180; angle += 5) {
+        for (float angle = 0; angle <= 180; angle += 0.47) {
             set_servo_angle(angle); // Define o ângulo do servo
             set_led_brightness(angle); // Define o brilho do LED
-            if (angle == 90) sleep_ms(5000); // Pausa de 5 segundos no ângulo de 90 graus
+            if (angle >= 89.76f && angle <= 90.24f) sleep_ms(5000); // Pausa de 5 segundos no ângulo de 90 graus
             sleep_ms(10); // Pausa de 10 ms entre cada incremento de ângulo
         }
 
@@ -42,10 +42,10 @@ int main()
         sleep_ms(5000);
 
         // Gira o servo de 180 a 0 graus
-        for (float angle = 180; angle >= 0; angle -= 5) {
+        for (float angle = 180; angle >= 0; angle -= 0.47) {
             set_servo_angle(angle); // Define o ângulo do servo
             set_led_brightness(angle); // Define o brilho do LED
-            if (angle == 90) sleep_ms(5000); // Pausa de 5 segundos no ângulo de 90 graus
+            if (angle >= 89.76f && angle <= 90.24f) sleep_ms(5000); // Pausa de 5 segundos no ângulo de 90 graus
             sleep_ms(10); // Pausa de 10 ms entre cada decremento de ângulo
         }
 
@@ -110,6 +110,6 @@ void set_servo_angle(float angle)
  */
 void set_led_brightness(float angle_brightness)
 {
-    uint brightness = (uint)(angle_brightness / 180.0f) * LED_WRAP;
+    uint brightness = (uint)((angle_brightness / 180.0f) * LED_WRAP);
     pwm_set_gpio_level(LED_PIN, brightness); // Define o Duty Cycle
 }
